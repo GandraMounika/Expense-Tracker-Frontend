@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="title">💸 Expense Tracker</div>
+      <label class="toggle" title="Toggle dark mode">
+        <input type="checkbox" id="darkToggle" />
+        <span>Dark Mode</span>
+        <span class="dot"></span>
+      </label>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="left">
+      <div class="card">
+        <h2 class="section-title">Dashboard</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Balance</h3>
+            <div id="balance" class="value">₹0</div>
+          </div>
+          <div class="card">
+            <h3>Income</h3>
+            <div id="income" class="value positive">₹0</div>
+          </div>
+          <div class="card">
+            <h3>Expenses</h3>
+            <div id="expenses" class="value negative">₹0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <h2 class="section-title">Add Transaction</h2>
+        <form id="txForm">
+          <div class="field">
+            <label for="amount">Amount</label>
+            <input id="amount" type="number" inputmode="decimal" placeholder="e.g., 500" required min="0" step="0.01" />
+          </div>
+          <div class="field">
+            <label for="description">Description</label>
+            <input id="description" type="text" placeholder="e.g., Groceries" required />
+          </div>
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category" required>
+              <option value="Income">Income</option>
+              <option value="Food">Food</option>
+              <option value="Transport">Transport</option>
+              <option value="Bills">Bills</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Health">Health</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="date">Date</label>
+            <input id="date" type="date" required />
+          </div>
+          <div class="actions">
+            <button class="btn-primary" type="submit">Add</button>
+            <button class="btn-secondary" type="reset">Clear</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card chart-card" style="margin-top:14px;">
+        <h2 class="section-title">Expense Distribution</h2>
+        <canvas id="pie"></canvas>
+        <div id="legend" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+      </div>
+    </section>
+
+    <section class="right">
+      <div class="card history">
+        <div>
+          <h2 class="section-title">Transaction History</h2>
+          <div class="filters">
+            <input id="search" type="search" placeholder="Search description..." />
+            <select id="filterCat">
+              <option value="All">All Categories</option>
+              <option value="Income">Income</option>
+              <option value="Food">Food</option>
+              <option value="Transport">Transport</option>
+              <option value="Bills">Bills</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Health">Health</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="list" id="txList" aria-live="polite">
+          <div class="row header">
+            <div>Description</div>
+            <div>Category</div>
+            <div>Date</div>
+            <div class="amount">Amount</div>
+            <div></div>
+          </div>
+          <!-- Rows injected here -->
+        </div>
+
+        <footer>Data is stored locally in your browser.</footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
