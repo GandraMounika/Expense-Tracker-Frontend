@@ -24,8 +24,8 @@ You can filter transactions by category and search transactions by description.
 7.Responsive Design
 The design uses CSS Flexbox and Grid to make the layout responsive. On smaller screens, dashboard cards stack vertically, and the transaction history becomes scrollable.
 
-Dark Mode
+8.Dark Mode
 A dark mode toggle button is included. You can switch between light and dark themes using JavaScript and CSS.
 
-Pie Chart (Optional)
+9.Pie Chart (Optional)
 An optional pie chart created with HTML canvas and JavaScript shows the distribution of expenses by category. The chart is responsive for both desktop and mobile.
