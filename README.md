@@ -1,4 +1,5 @@
 **💸 Expense Tracker**
+
 This is a responsive expense tracker web application built with HTML, CSS, and JavaScript without any external libraries. The app allows you to track your income and expenses, view your balance, and manage your transactions easily.
 
 **Functionality**
